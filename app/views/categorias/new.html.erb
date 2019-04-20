@@ -1,30 +1,5 @@
-<%= form_with scope: :categoria, url: categorias_path, local: true do |form| %>
+<h1>Nova categoria</h1>
  
-  <% if @categoria.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@categoria.errors.count, "Erro") %>
-      </h2>
-      <ul>
-        <% @categoria.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= form.label :nome %><br>
-    <%= form.text_field :nome %>
-  </p>
-  
-  <p>
-    <%= form.label :descricao %><br>
-    <%= form.text_area :descricao %>
-  </p>
-  
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
+ 
 <%= link_to 'Back', categorias_path %>
