@@ -8,14 +8,18 @@ class CategoriasController < ApplicationController
     end
     
     def new
+        @categoria = Categoria.new
     end
 
     def create
         @categoria = Categoria.new(categoria_params)
        
-        @categoria.save
-        redirect_to @categoria
-      end
+        if @categoria.save
+          redirect_to @categoria
+        else
+          render 'new'
+        end
+    end
        
     private
     def categoria_params
