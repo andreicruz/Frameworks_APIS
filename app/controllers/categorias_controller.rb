@@ -11,6 +11,10 @@ class CategoriasController < ApplicationController
         @categoria = Categoria.new
     end
 
+    def edit
+        @categoria = Categoria.find(params[:id])
+    end
+
     def create
         @categoria = Categoria.new(categoria_params)
        
@@ -21,6 +25,16 @@ class CategoriasController < ApplicationController
         end
     end
        
+    def update
+        @categoria = Categoria.find(params[:id])
+       
+        if @categoria.update(categoria_params)
+          redirect_to @categoria
+        else
+          render 'edit'
+        end
+    end
+
     private
     def categoria_params
         params.require(:categoria).permit(:nome, :descricao)
