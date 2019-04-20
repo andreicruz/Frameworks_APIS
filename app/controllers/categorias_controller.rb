@@ -35,6 +35,13 @@ class CategoriasController < ApplicationController
         end
     end
 
+    def destroy
+        @categoria = Categoria.find(params[:id])
+        @categoria.destroy
+     
+        redirect_to categorias_path
+    end
+
     private
     def categoria_params
         params.require(:categoria).permit(:nome, :descricao)
