@@ -1,0 +1,15 @@
+<%= form_with scope: :categoria, url: categorias_path, local: true do |form| %>
+    <p>
+      <%= form.label :nome %><br>
+      <%= form.text_field :nome %>
+    </p>
+   
+    <p>
+      <%= form.label :descricao %><br>
+      <%= form.text_area :descricao %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
