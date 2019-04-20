@@ -13,6 +13,9 @@
       <td><%= categoria.descricao %></td>
       <td><%= link_to 'Show', categoria_path(categoria) %></td>
       <td><%= link_to 'Edit', edit_categoria_path(categoria) %></td>
+      <td><%= link_to 'Destroy', categoria_path(categoria),
+              method: :delete,
+              data: { confirm: 'Deseja deletar?' } %></td>
     </tr>
   <% end %>
 </table>
