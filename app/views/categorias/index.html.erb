@@ -1,23 +1,25 @@
-<div class="">
-  <h1 class="teste">categorias</h1>
+<body class="site">
+  <div class="container">
+    <h1 class="teste">categorias</h1>
 
-  <table>
-    <tr>
-      <th>Nome</th>
-      <th>Descricao</th>
-      <th colspan="2"></th>
-    </tr>
-  
-    <% @categorias.each do |categoria| %>
+    <table>
       <tr>
-        <td><%= categoria.nome %></td>
-        <td><%= categoria.descricao %></td>
-        <td><%= link_to 'Show', categoria_path(categoria) %></td>
-        <td><%= link_to 'Edit', edit_categoria_path(categoria) %></td>
-        <td><%= link_to 'Destroy', categoria_path(categoria),
-                method: :delete,
-                data: { confirm: 'Deseja deletar?' } %></td>
+        <th>Nome</th>
+        <th>Descricao</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </table>
-</div>
+    
+      <% @categorias.each do |categoria| %>
+        <tr>
+          <td><%= categoria.nome %></td>
+          <td><%= categoria.descricao %></td>
+          <td><%= link_to 'Show', categoria_path(categoria) %></td>
+          <td><%= link_to 'Edit', edit_categoria_path(categoria) %></td>
+          <td><%= link_to 'Destroy', categoria_path(categoria),
+                  method: :delete,
+                  data: { confirm: 'Deseja deletar?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</body>
