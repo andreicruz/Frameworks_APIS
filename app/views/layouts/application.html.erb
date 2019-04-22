@@ -9,10 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header class="header-web hidden-sm">
-    <div class="container">
+    <div class="container menu">
       <div class="logo">
-      <%= link_to 'Back', index_index_path %>
-        <a href="#" class="fa fa-home fa-2x"></a>
+        <%= link_to '', index_index_path, :class => "fa fa-home fa-3x" %>
+      </div>
+      <div class="links">
+        <%= link_to 'Categorias', categorias_path, :class => "dropdown-toggle" %>
       </div>
     </div>
   </header
