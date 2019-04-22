@@ -11,15 +11,17 @@
   <header class="header-web hidden-sm">
     <div class="container menu">
       <div class="logo">
-        <%= link_to '', index_index_path, :class => "fa fa-home fa-3x" %>
+        <%= link_to '', index_index_path, :class => "fa fa-home fa-2x" %>
       </div>
       <div class="links">
         <%= link_to 'Categorias', categorias_path, :class => "dropdown-toggle" %>
+        <%= link_to 'Teste', categorias_path, :class => "dropdown-toggle" %>
+        <%= link_to 'Documentacao', categorias_path, :class => "dropdown-toggle" %>
       </div>
     </div>
   </header
 
-  <body>
+  <body class="site">
     <%= yield %>
   </body>
 </html>
