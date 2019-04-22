@@ -17,23 +17,28 @@
 @import "font-awesome";
 @import "categorias.scss";
 
-.header-web{
-    background-color: #11110e;
-    padding: 20px 0px 20px 0px;
-    // position: fixed;
-    width: 100%;
-    z-index: 1000;
-    .menu{
-        display: flex;
-        a{
-            color: white;
-        }
-        .logo{
-            flex: 0.1;
-        }
-        .links{
-            flex: 1;
-            padding: 15px;
+.site{
+    margin-top: 100px;
+    .header-web{
+        background-color: #11110e;
+        padding: 15px 0px 15px 0px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        .menu{
+            display: flex;
+            a{
+                color: white;
+                padding: 0px 10px 0px 0px
+            }
+            .logo{
+                flex: 0.065;
+            }
+            .links{
+                flex: 1;
+                padding: 5px
+            }
         }
     }
 }
