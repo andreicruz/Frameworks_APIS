@@ -8,6 +8,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header class="header-web hidden-sm">
+    <div class="container">
+      <div class="logo">
+      <%= link_to 'Back', index_index_path %>
+        <a href="#" class="fa fa-home fa-2x"></a>
+      </div>
+    </div>
+  </header
 
   <body>
     <%= yield %>
