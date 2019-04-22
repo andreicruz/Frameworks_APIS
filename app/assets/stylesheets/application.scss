@@ -18,9 +18,22 @@
 @import "categorias.scss";
 
 .header-web{
-    height: 100px;
-    padding: 10px 0px 10px 0px;
+    background-color: #11110e;
+    padding: 20px 0px 20px 0px;
     // position: fixed;
     width: 100%;
-    z-index: 1000; 
+    z-index: 1000;
+    .menu{
+        display: flex;
+        a{
+            color: white;
+        }
+        .logo{
+            flex: 0.1;
+        }
+        .links{
+            flex: 1;
+            padding: 15px;
+        }
+    }
 }
