@@ -1,23 +1,23 @@
 <body class="site">
   <div class="container">
-    <h1 class="teste">categorias</h1>
-
-    <table>
+    <table class="table table-striped table-hover">
       <tr>
+        <th>ID</th>
         <th>Nome</th>
         <th>Descricao</th>
-        <th colspan="2"></th>
+        <th colspan="3"></th>
       </tr>
     
       <% @categorias.each do |categoria| %>
         <tr>
+          <td><%= categoria.id %></td>
           <td><%= categoria.nome %></td>
           <td><%= categoria.descricao %></td>
-          <td><%= link_to 'Show', categoria_path(categoria) %></td>
-          <td><%= link_to 'Edit', edit_categoria_path(categoria) %></td>
-          <td><%= link_to 'Destroy', categoria_path(categoria),
+          <td><%= link_to 'Visualizar', categoria_path(categoria) %></td>
+          <td><%= link_to '', edit_categoria_path(categoria), :class => "fa fa-edit" %></td>
+          <td><%= link_to '', categoria_path(categoria),
                   method: :delete,
-                  data: { confirm: 'Deseja deletar?' } %></td>
+                  data: { confirm: 'Deseja deletar?' }, :class => "fa fa-trash"  %></td>
         </tr>
       <% end %>
     </table>
