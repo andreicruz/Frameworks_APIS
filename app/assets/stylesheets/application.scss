@@ -20,10 +20,11 @@
 .site{
     margin-top: 100px;
     .header-web{
-        background-color: #11110e;
+        background-color: #11110e;       
         padding: 15px 0px 15px 0px;
         position: fixed;
         top: 0;
+        transition: all 200ms linear;
         width: 100%;
         z-index: 1000;
         .menu{
@@ -41,4 +42,8 @@
             }
         }
     }
+}
+
+.follower{
+    box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
 }
