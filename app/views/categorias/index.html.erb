@@ -1,25 +1,27 @@
 <body class="site">
   <div class="container">
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Descricao</th>
-        <th colspan="3"></th>
-      </tr>
-    
-      <% @categorias.each do |categoria| %>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
         <tr>
-          <td><%= categoria.id %></td>
-          <td><%= categoria.nome %></td>
-          <td><%= categoria.descricao %></td>
-          <td><%= link_to 'Visualizar', categoria_path(categoria) %></td>
-          <td><%= link_to '', edit_categoria_path(categoria), :class => "fa fa-edit" %></td>
-          <td><%= link_to '', categoria_path(categoria),
-                  method: :delete,
-                  data: { confirm: 'Deseja deletar?' }, :class => "fa fa-trash"  %></td>
+          <th class="d-none d-sm-block">ID</th>
+          <th>Nome</th>
+          <th>Descricao</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </table>
+      
+        <% @categorias.each do |categoria| %>
+          <tr>
+            <td><%= categoria.id %></td>
+            <td><%= categoria.nome %></td>
+            <td><%= categoria.descricao %></td>
+            <td><%= link_to 'Visualizar', categoria_path(categoria) %></td>
+            <td><%= link_to '', edit_categoria_path(categoria), :class => "fa fa-edit" %></td>
+            <td><%= link_to '', categoria_path(categoria),
+                    method: :delete,
+                    data: { confirm: 'Deseja deletar?' }, :class => "fa fa-trash"  %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </body>
