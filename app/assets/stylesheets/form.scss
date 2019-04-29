@@ -1,0 +1,9 @@
+.site{
+    & .form-botoes{
+        display: flex;
+        margin-bottom: 15px;
+        & .botao{
+            // margin-right: 5px;
+        }
+    }
+}
