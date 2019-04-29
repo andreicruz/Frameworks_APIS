@@ -1,0 +1,16 @@
+.btn-primary{
+    background-color: #c10006;
+    border-color: #c10006;
+    &:hover{
+        background-color: #7c0000;
+        border-color: #7c0000;
+    }
+    &:active{
+        background-color: #7c0000;
+        border-color: #7c0000; 
+    }
+    &:not(:disabled):not(.disabled):active{
+        background-color: #7c0000;
+        border-color: #7c0000;
+    }
+}
