@@ -18,7 +18,9 @@
 @import "categorias.scss";
 @import "form.scss";
 @import "helpers.scss";
-
+@import "_functions";
+@import "_variables";
+@import "_breakpoints";
 
 .site{
     margin-top: 100px;
