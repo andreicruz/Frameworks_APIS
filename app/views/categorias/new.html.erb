@@ -1,7 +1,7 @@
 <div class="container">
-    <h1>Nova categoria</h1>
- 
+    <div>
+        <h1>Nova categoria</h1>
+        <%= link_to "Voltar", categorias_path, :class => "btn btn-back col" %>
+    </div>
     <%= render 'form' %>
- 
-    <%= link_to "Voltar", categorias_path, :class => "btn btn-primary col" %>
 </div>
