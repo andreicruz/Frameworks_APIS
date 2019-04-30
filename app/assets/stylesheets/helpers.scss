@@ -14,3 +14,25 @@
         border-color: #7c0000;
     }
 }
+
+.btn-back{
+    background-color: #0065ff;
+    border-color: #0065ff;
+    &:hover{
+        background-color: #0048b7;
+        border-color: #0048b7;
+    }
+    &:active{
+        background-color: #0048b7;
+        border-color: #0048b7; 
+    }
+    &:not(:disabled):not(.disabled):active{
+        background-color: #0048b7;
+        border-color: #0048b7;
+    }
+}
+
+.btn-secondary{
+    background-color: #adadad;
+    border-color: #adadad;
+}
