@@ -8,3 +8,12 @@
         }
     }
 }
+
+@include media-breakpoint-down(sm){
+    .site{
+        & .form-botoes{
+            display: none;
+        }
+    }    
+}
+
