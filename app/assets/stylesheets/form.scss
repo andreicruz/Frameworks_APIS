@@ -3,7 +3,8 @@
         display: flex;
         margin-bottom: 15px;
         & .botao{
-            // margin-right: 5px;
+            flex: 1;
+            margin-right: 15px;
         }
     }
 }
