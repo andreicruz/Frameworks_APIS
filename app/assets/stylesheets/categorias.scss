@@ -1,3 +1,22 @@
-// Place all the styles related to the Categorias controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.site{
+    & .modal-header{
+        background-color: #9E9E9C;
+        color: white;
+        & .close{
+            opacity: 1.5;
+            color: white;
+        }
+    }
+    & .modal-body{
+        & .nome, & .descricao{
+        }
+    }
+    & .modal-footer{
+        & a{
+            font-size: 20px;
+        }
+        & .btn{
+            padding: 7px 40px;
+        }
+    }
+}
