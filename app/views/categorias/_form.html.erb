@@ -23,9 +23,15 @@
       <%= form.text_area :descricao, :class => "form-control", rows: 3 %>
     </div>
   
-    <div class="form-botoes">
-      <%= form.submit "Criar", :class => "btn btn-primary botao col-lg-8" %>
-      <%= form.submit "Limpar", :name => 'reset', :type => "reset", :class => "btn btn-secondary col-lg-4" %>
-    </div>
+		<div class="form-botoes">
+			<div class="row">
+				<div class="col-sm-12 col-lg-8">
+					<%= form.submit "Criar", :class => "btn btn-primary botao botao--margin" %>
+				</div>
+				<div class="col-sm-12 col-lg-4">
+					<%= form.submit "Limpar", :name => 'reset', :type => "reset", :class => "btn btn-secondary botao"%>
+				</div>
+			</div>
+		</div>
   <% end %>
 </body>
