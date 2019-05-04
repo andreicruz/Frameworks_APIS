@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header class="header-web hidden-sm">
+  <header class="header-web d-none d-md-block">
     <div class="container menu">
       <div class="logo">
         <%= link_to '', index_index_path, :class => "fa fa-home fa-2x" %>
@@ -19,8 +19,19 @@
         <%= link_to 'Documentacao', categorias_path, :class => "dropdown-toggle" %>
       </div>
     </div>
-  </header
-
+  </header>
+  <header class="header-mobile d-lg-none d-md-none d-xl-block">
+    <div class="container">
+      <div class="menu row">
+        <%= link_to '', index_index_path, :class => "fa fa-home fa-2x col-6 logo" %>
+        <%= link_to '', '#menuCollapse', :class => "fa fa-bars fa-2x col-6 links", 
+        data: {toggle: :collapse },  aria: { controls: :menuCollapse, expanded: false }%>
+      </div>
+    </div>
+    <div class="collapse" id="menuCollapse">
+      <li>Categorias</li>
+    </div>
+  </header>
   <body class="site">
     <%= yield %>
   </body>
