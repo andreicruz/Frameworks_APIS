@@ -11,15 +11,38 @@
       
         <% @categorias.each do |categoria| %>
           <tr>
-            <td><%= categoria.id %></td>
+            <td class="d-none d-md-block"><%= categoria.id %></td>
             <td><%= categoria.nome %></td>
             <td><%= categoria.descricao %></td>
-            <td><%= link_to 'Visualizar', categoria_path(categoria) %></td>
-            <td><%= link_to '', edit_categoria_path(categoria), :class => "fa fa-edit" %></td>
-            <td><%= link_to '', categoria_path(categoria),
-                    method: :delete,
-                    data: { confirm: 'Deseja deletar?' }, :class => "fa fa-trash"  %></td>
+            <td><a href="#" data-toggle="modal" data-target="#modalCategoria-<%= categoria.id %>">Visualizar</a></td>
           </tr>
+          <!-- Modal -->
+          <div class="modal fade" id="modalCategoria-<%= categoria.id %>" tabindex="-1" role="dialog" aria-labelledby="modalCategoriaLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalCategoriaLabel">Sobre</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="nome">
+                    <p><strong>Nome:</strong> <%= categoria.nome %></p>
+                  </div>
+                  <div class="descricao">
+                    <p><strong>Descrição:</strong> <%= categoria.descricao %></p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <%= link_to '', edit_categoria_path(categoria), :class => "btn btn-success fa fa-edit" %>
+                  <%= link_to '', categoria_path(categoria),
+                    method: :delete,
+                    data: { confirm: 'Deseja deletar?' }, :class => "btn btn-primary fa fa-trash" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
       </table>
     </div>
