@@ -3,13 +3,13 @@
     <% if @categoria.errors.any? %>
       <div id="error_explanation">
         <h2>
-          <%= pluralize(@categoria.errors.count, "error") %>
+          <%= pluralize(@categoria.errors.count, "Erros") %>
         </h2>
-        <ul>
-          <% @categoria.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+          <div class="alert alert-danger" role="alert">
+            <% @categoria.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </div>
       </div>
     <% end %>
 
@@ -26,7 +26,7 @@
 		<div class="form-botoes">
 			<div class="row">
 				<div class="col-sm-12 col-lg-8">
-					<%= form.submit "Criar", :class => "btn btn-primary botao botao--margin" %>
+					<%= form.submit :class => "btn btn-primary botao botao--margin" %>
 				</div>
 				<div class="col-sm-12 col-lg-4">
 					<%= form.submit "Limpar", :name => 'reset', :type => "reset", :class => "btn btn-secondary botao"%>
