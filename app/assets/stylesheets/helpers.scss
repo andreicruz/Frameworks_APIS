@@ -41,3 +41,27 @@
     color: #0046b7;
     text-align: right
 }
+
+// Modal
+.site{
+    & .modal-header{
+        background-color: #9E9E9C;
+        color: white;
+        & .close{
+            opacity: 1.5;
+            color: white;
+        }
+    }
+    & .modal-body{
+        & .nome, & .descricao{
+        }
+    }
+    & .modal-footer{
+        & a{
+            font-size: 20px;
+        }
+        & .btn{
+            padding: 7px 40px;
+        }
+    }
+}
