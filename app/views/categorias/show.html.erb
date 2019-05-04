@@ -1,12 +1,19 @@
-<p>
-<strong>Nome:</strong>
-<%= @categoria.nome %>
-</p>
+<div class="container">
+    <div class="row">
+        <h2 class="col-lg-8">Categoria</h2>
+        <div class="col-lg-4 d-none d-lg-block text-right"">
+            <%= link_to "", categorias_path, :class => "fa fa-arrow-circle-left fa-2x botao-voltar" %>
+        </div>
+    </div>
+    <p>
+    <strong>Nome:</strong>
+    <%= @categoria.nome %>
+    </p>
 
-<p>
-<strong>Descricao:</strong>
-<%= @categoria.descricao %>
-</p>
+    <p>
+    <strong>Descricao:</strong>
+    <%= @categoria.descricao %>
+    </p>
 
-<%= link_to 'Edit', edit_categoria_path(@categoria) %> |
-<%= link_to 'Back', categorias_path %>
+    <%= link_to '', edit_categoria_path(@categoria), :class => "btn btn-success fa fa-edit" %>
+</div>
