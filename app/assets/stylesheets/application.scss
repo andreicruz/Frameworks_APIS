@@ -53,3 +53,22 @@
 .follower{
     box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
 }
+
+@include media-breakpoint-down(sm){
+    .site{
+        margin-top: 0px;
+        & .header-mobile{
+            background-color: #11110e;
+            margin-bottom: 25px;
+            padding: 15px 0px 15px 0px;
+            & .menu{
+                & .links{
+                    text-align: right;
+                }
+                & a{
+                    color: white;
+                }
+            }
+        }
+    }    
+}
