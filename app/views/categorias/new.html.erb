@@ -1,7 +1,7 @@
 <div class="container">
-    <div>
-        <h1>Nova categoria</h1>
-        <%= link_to "Voltar", categorias_path, :class => "btn btn-back col" %>
+    <div class="row">
+        <h2 class="col-lg-8">Nova categoria</h2>
+        <%= link_to "", categorias_path, :class => "col-lg-4 d-none d-lg-block fa fa-arrow-circle-left fa-2x botao-voltar" %>
     </div>
     <%= render 'form' %>
 </div>
