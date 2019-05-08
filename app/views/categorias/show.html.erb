@@ -6,13 +6,13 @@
         </div>
     </div>
     <p>
-    <strong>Nome:</strong>
-    <%= @categoria.nome %>
+        <strong>Nome:</strong>
+        <input class="form-control" type="text" placeholder="<%= @categoria.nome %>" readonly>     
     </p>
 
     <p>
-    <strong>Descricao:</strong>
-    <%= @categoria.descricao %>
+        <strong>Descricao:</strong>
+        <input class="form-control" type="text" placeholder="<%= @categoria.descricao %>" readonly>
     </p>
 
     <%= link_to '', edit_categoria_path(@categoria), :class => "btn btn-success fa fa-edit" %>
