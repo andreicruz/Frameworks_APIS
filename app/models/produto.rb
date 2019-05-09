@@ -1,3 +1,3 @@
 class Produto < ApplicationRecord
-  has_one :categoria
+  belongs_to :categoria
 end
