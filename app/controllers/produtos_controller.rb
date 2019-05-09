@@ -14,6 +14,7 @@ class ProdutosController < ApplicationController
 
     def edit
         @produto = Produto.find(params[:id])
+        @categoria_options = Categoria.all.map{ |cat| [ cat.nome, cat.id ] }
     end
 
     def create
