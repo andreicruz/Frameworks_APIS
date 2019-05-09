@@ -1,0 +1,50 @@
+<body class="site">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <tr>
+          <th class="d-none d-sm-block">ID</th>
+          <th>Nome</th>
+          <th><i class="fa fa-cog"></i></th>
+        </tr>
+        <% @produtos.each do |produto| %>
+          <tr>
+            <td class="d-none d-md-block"><%= produto.id %></td>
+            <td><%= produto.nome %></td>
+            <td><a href="#" data-toggle="modal" data-target="#modalCategoria-<%= produto.id %>">Visualizar</a></td>
+          </tr>
+          <!-- Modal -->
+          <div class="modal fade" id="modalCategoria-<%= produto.id %>" tabindex="-1" role="dialog" aria-labelledby="modalCategoriaLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalCategoriaLabel">Sobre</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="nome">
+                    <p><strong  data-toggle="tooltip" data-placement="top" title="Tooltip on top">Nome:</strong> <%= produto.nome %></p>
+                  </div>
+                  <div class="descricao">
+                    <p><strong>Descrição:</strong> <%= produto.descricao %></p>
+                  </div>
+                  <div class="preco">
+                    <p><strong>Preço:</strong> <%= produto.preco %></p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <%= link_to '', edit_produto_path(produto), data: { toggle: 'tooltip', placement: 'top'}, title: 'Editar', :class => "btn btn-success fa fa-edit"%>
+                  <%= link_to '', produto_path(produto),
+                    method: :delete,
+                    data: { confirm: 'Deseja deletar?', toggle: 'tooltip', placement: 'top'}, title: 'Excluir', :class => "btn btn-primary fa fa-trash" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</body>

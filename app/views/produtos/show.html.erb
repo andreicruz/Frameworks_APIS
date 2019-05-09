@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <h2 class="col-lg-8">Produto</h2>
+        <div class="col-lg-4 d-none d-lg-block text-right"">
+            <%= link_to "", produtos_path, :class => "fa fa-arrow-circle-left fa-2x botao-voltar" %>
+        </div>
+    </div>
+    <p>
+        <strong>Nome:</strong>
+        <input class="form-control" type="text" placeholder="<%= @produto.nome %>" readonly>     
+    </p>
+
+    <p>
+        <strong>Descricao:</strong>
+        <input class="form-control" type="text" placeholder="<%= @produto.descricao %>" readonly>
+    </p>
+
+    <p>
+        <strong>Preço:</strong>
+        <input class="form-control" type="text" placeholder="<%= @produto.preco %>" readonly>
+    </p>
+
+    <%= link_to '', edit_produto_path(@produto), :class => "btn btn-success fa fa-edit" %>
+</div>
