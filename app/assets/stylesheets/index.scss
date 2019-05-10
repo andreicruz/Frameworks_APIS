@@ -1,3 +1,32 @@
-// Place all the styles related to the Index controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.site{
+    & a{
+        & .quadrado {
+            border: 1px solid;
+            min-height: 175px;
+            padding: 30px 0px;
+            text-align: center;
+        }
+        & .quadrado--margin{
+            margin-right: 15px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .site{
+        & a{
+            & .quadrado--margin{
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.custom-btn {
+    @include button-variant(white, #2e8108, #1b7c18);
+}
+.custom-btn1{
+    @include button-variant(white, #4184ca, #3078c5);
+}
+
+//@mixin button-variant($color, $background, $border) {
