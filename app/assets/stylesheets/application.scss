@@ -23,10 +23,11 @@
 @import "_breakpoints";
 @import "_buttons";
 @import "index.scss";
+@import "produtos.scss";
 
 .site{
     margin-top: 100px;
-    .header-web{
+    & .header-web{
         background-color: #11110e;       
         padding: 15px 0px 15px 0px;
         position: fixed;
@@ -34,19 +35,29 @@
         transition: all 200ms linear;
         width: 100%;
         z-index: 1000;
-        .menu{
+        & .menu{
             display: flex;
-            a{
+            & a{
                 color: white;
-                padding: 0px 10px 0px 0px
+                padding: 0px 10px 0px 0px;
             }
-            .logo{
+            & .logo{
                 flex: 0.065;
             }
-            .links{
+            & .links{
                 display: flex;
                 flex: 1;
-                padding: 5px
+                padding: 5px;
+            }
+            & .dropdown-menu{
+                padding: 7px;
+                & a{
+                    color:black;
+                    padding: 4px;
+                    &:active{
+                        background-color: white;
+                    }
+                }
             }
         }
     }
