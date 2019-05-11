@@ -17,9 +17,24 @@
         <%= link_to '', index_index_path, :class => "fa fa-home fa-2x" %>
       </div>
       <div class="links">
-        <%= link_to 'Categorias', categorias_path, :class => "dropdown-toggle" %>
-        <%= link_to 'Teste', categorias_path, :class => "dropdown-toggle" %>
-        <%= link_to 'Documentacao', categorias_path, :class => "dropdown-toggle" %>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categorias
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Categorias', categorias_path, :class => "dropdown-item" %>
+            <%= link_to 'Nova Categoria', new_categoria_path, :class => "dropdown-item" %>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Produtos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Produtos', produtos_path, :class => "dropdown-item" %>
+            <%= link_to 'Novo Produto', new_produto_path, :class => "dropdown-item" %>
+          </div>
+        </div>
       </div>
     </div>
   </header>
