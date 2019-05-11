@@ -1,3 +1,12 @@
-// Place all the styles related to the Produtos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.modal-body{
+    display: flex;
+    & .info-produto, & .info-categoria{
+        flex: 1;
+        & .item{
+            margin-bottom: 8px;
+        }
+        & .item--nomargin{
+            margin-bottom: 0px;
+        }
+    }
+}
