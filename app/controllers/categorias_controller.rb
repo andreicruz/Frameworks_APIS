@@ -37,7 +37,11 @@ class CategoriasController < ApplicationController
 
     def destroy
         @categoria = Categoria.find(params[:id])
-        @categoria.destroy
+        if @categoria.destroy
+            flash[:success] = 'Categoria deletada'
+        else
+            flash[:danger] = 'Categoria vinculada a um produto, impossível deletar'
+        end
      
         redirect_to categorias_path
     end
