@@ -28,7 +28,11 @@
       <%= form.number_field :preco, step: :any, :class => "form-control", rows: 3 %>
     </div>
   
-    <%= form.select(:categoria_id, @categoria_options) %>
+    <div class="form-group fields">
+      <%= form.label :categoria %><br>
+      <%= form.select(:categoria_id, @categoria_options, {}, { :class => 'custom-select' })%>
+    </div>
+    
 
 		<div class="form-botoes">
 			<div class="row">
