@@ -19,6 +19,7 @@ class ProdutosController < ApplicationController
 
     def create
         @produto = Produto.new(produto_params)
+        @categoria_options = Categoria.all.map{ |cat| [ cat.nome, cat.id ] }
        
         if @produto.save
           redirect_to @produto
@@ -39,7 +40,11 @@ class ProdutosController < ApplicationController
 
     def destroy
         @produto = Produto.find(params[:id])
-        @produto.destroy
+        if @produto.destroy
+            flash[:success] = 'Produto deletado'
+        else
+            flash[:danger] = 'Não foi possível deletar o produto'
+        end
      
         redirect_to produtos_path
     end
