@@ -3,31 +3,34 @@ class CategoriasController < ApplicationController
     def index
         @categorias = Categoria.all.order("created_at ASC")
         # API REST
-        render json: {status: 'SUCCESS', message:'Categorias carregadas', data:@categorias},status: :ok
+        # render json: {status: 'SUCCESS', message:'Categorias carregadas', data:@categorias},status: :ok
+        render json: @categorias
     end
     
     def show
         @categoria = Categoria.find(params[:id])
-        render json: {status: 'SUCCESS', message:'Categoria', data:@categoria},status: :ok
+        # render json: {status: 'SUCCESS', message:'Categoria', data:@categoria},status: :ok
+        render json: @categoria
     end
     
     def new
         @categoria = Categoria.new
+        render json: @categoria
     end
 
     def edit
         @categoria = Categoria.find(params[:id])
+        render json: @categoria
     end
 
     def create
         @categoria = Categoria.new(categoria_params)
        
         if @categoria.save
-          redirect_to @categoria
-          render json: {status: 'SUCCESS', message:'Categoria Salva', data:@categoria},status: :ok
+          #redirect_to @categoria
+          render json: @categoria
         else
-          render 'new'
-          render json: {status: 'ERROR', message:'Erro ao Criar', data:@categoria.erros},status: :unprocessable_entity
+          #render 'new'
         end
     end
        
@@ -35,25 +38,26 @@ class CategoriasController < ApplicationController
         @categoria = Categoria.find(params[:id])
        
         if @categoria.update(categoria_params)
-          redirect_to @categoria
-          render json: {status: 'SUCCESS', message:'Categoria editada', data:@categoria},status: :ok          
+         # redirect_to @categoria
+          render json: @categoria
         else
-          render 'edit'
-          render json: {status: 'ERROR', message:'Erro ao editar', data:@categoria.erros},status: :unprocessable_entity
+          #render 'edit'
+          #render json: @categoria
         end
     end
 
     def destroy
         @categoria = Categoria.find(params[:id])
         if @categoria.destroy
-            flash[:success] = 'Categoria deletada'
-            render json: {status: 'SUCCESS', message:'Categoria Deletada', data:@categoria},status: :ok
+           # flash[:success] = 'Categoria deletada'
+            render json: @categoria
+            #render json: {status: 'SUCCESS', message:'Categoria Deletada', data:@categoria},status: :ok
         else
-            flash[:danger] = 'Categoria vinculada a um produto, impossível deletar'
-            render json: {status: 'ERROR', message:'Erro ao Deletar', data:@categoria.erros},status: :unprocessable_entity
+            #flash[:danger] = 'Categoria vinculada a um produto, impossível deletar'
+            #render json: {status: 'ERROR', message:'Erro ao Deletar', data:@categoria.erros},status: :unprocessable_entity
         end
      
-        redirect_to categorias_path
+        #redirect_to categorias_path
     end
 
     private

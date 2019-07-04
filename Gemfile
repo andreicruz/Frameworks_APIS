@@ -10,6 +10,8 @@ gem 'jquery-rails'
 # font awesome
 gem "font-awesome-rails"
 
+gem 'rack-cors'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
