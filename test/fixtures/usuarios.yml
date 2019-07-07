@@ -3,6 +3,7 @@
 one:
   nome: MyString
   sobrenome: MyString
+  login: MyString
   email: MyString
   senha: MyString
   cep: MyString
@@ -15,6 +16,7 @@ one:
 two:
   nome: MyString
   sobrenome: MyString
+  login: MyString
   email: MyString
   senha: MyString
   cep: MyString

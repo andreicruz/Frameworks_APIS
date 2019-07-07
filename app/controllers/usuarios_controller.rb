@@ -8,9 +8,13 @@ class UsuariosController < ApplicationController
     end
 
     def show
-        @usuario = Usuario.find(params[:id])
+        @usuario = Usuario.find_by(login: params[:login])
         # render json: {status: 'SUCCESS', message:'Categoria', data:@categoria},status: :ok
-        render json: @usuario
+        if @usuario
+            render json: @usuario
+        else
+            render :json => { :errors => @usuario.errors.full_messages }
+        end
     end
         
     def new
@@ -60,6 +64,6 @@ class UsuariosController < ApplicationController
 
     private
     def usuario_params
-        params.require(:usuario).permit(:nome, :sobrenome, :email, :senha, :cep, :logradouro, :bairro, :localidade, :uf)
+        params.require(:usuario).permit(:nome, :sobrenome, :login, :email, :senha, :cep, :logradouro, :bairro, :localidade, :uf)
     end
 end
