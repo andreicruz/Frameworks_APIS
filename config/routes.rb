@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   scope path_names: { new: "novo", edit: "editar" } do
     resources :produtos
     resources :categorias
+    resources :usuarios
   end
 
   root 'index#index'
